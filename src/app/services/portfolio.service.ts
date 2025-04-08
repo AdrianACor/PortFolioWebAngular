@@ -21,7 +21,7 @@ export class PortfolioService {
         title: "Basic Gym Management",
         description:
           "This project try to manage All the basic functions of a gym like members register, in and outs of members, payments of membership, etc.",
-        image: "/assets/Gym.jpg",
+        image: "./assets/Gym.jpg",
         tags: ["C#", "MySQL", "Visual Studio Forms"],
         demo: "",
         github: "",
@@ -32,7 +32,7 @@ export class PortfolioService {
         title: "CarRegister v2.0",
         description:
           "This project was made during my stay in the engineering, was made in Delphi (Object Pascal) and i updated it doing it completely with Java and a MySQL database.",
-        image: "/assets/CarRegisterV2.0.jpg",
+        image: "./assets/CarRegisterV2.0.jpg",
         tags: ["Java", "Java Forms", "MySQL", "Delphi"],
         demo: "",
         github: "https://github.com/AdrianACor/CarRegister",
@@ -43,7 +43,7 @@ export class PortfolioService {
         title: "ToDo List",
         description:
           "This is a simple web app that i realized for training my knowledge in Angular and Java SpringBoot, is a basic To Do List that implements a interaction with a CRUD APIs and a MySQL database.",
-        image: "/assets/ToDoList.jpg",
+        image: "./assets/ToDoList.jpg",
         tags: ["Angular", "API Integration", "Java Spring Boot", "MySQL"],
         demo: "",
         github: "https://github.com/AdrianACor/TodoList",
@@ -58,7 +58,7 @@ export class PortfolioService {
       { name: "React", percentage: 90, icon: "fab fa-react" },
       { name: "Angular", percentage: 85, icon: "fab fa-angular" },
       { name: "NextJs (React Framework)", percentage: 80, icon: "fab fa-react" },
-      { name: "Ionic (Angular Framework)", percentage: 92, icon: "/assets/icons/ionic.svg" },
+      { name: "Ionic (Angular Framework)", percentage: 92, icon: "./assets/icons/ionic.svg" },
     ],
     backendSkills: [
       { name: "Node.js", percentage: 90 , icon: "fab fa-node"},
@@ -71,9 +71,9 @@ export class PortfolioService {
       { name: "Oracle PL/SQL", percentage: 70 , icon: "fas fa-database"},
     ],
     databases: [
-      { name: "MySQL", icon: "/assets/icons/mysql.svg"},
-      { name: "SQL Server", icon: "/assets/icons/sql-server.png"},
-      { name: "Oracle SQL", icon: "/assets/icons/oracle.svg"},
+      { name: "MySQL", icon: "./assets/icons/mysql.svg"},
+      { name: "SQL Server", icon: "./assets/icons/sql-server.png"},
+      { name: "Oracle SQL", icon: "./assets/icons/oracle.svg"},
     ],
     tools: [
       { name: "Git", icon: "fab fa-git-alt", color: "#F05032" },
@@ -140,7 +140,7 @@ export class PortfolioService {
         dribbble: "",
       },
     },
-    resumeLink: "/assets/",
+    resumeLink: "./assets/",
   };
 
   constructor(private http: HttpClient, private translate: TranslateService) {}
