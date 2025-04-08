@@ -1,0 +1,87 @@
+<section id="skills" class="skills-section section" *ngIf="portfolioData">
+  <div class="container">
+    <div class="section-title">
+      <h2>{{ 'mySkills' | translate }}</h2>
+      <div class="section-title-underline"></div>
+    </div>
+    
+    <div class="skills-content">
+      <div class="skills-left">
+        <div class="skills-group">
+          <h3 class="skills-group-title">
+            <i class="fas fa-code"></i>{{ 'frontendDev' | translate }}
+          </h3>
+          
+          <div class="skills-bars">
+            <div *ngFor="let skill of portfolioData.frontendSkills" class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">{{ skill.name }}</span>
+                <div class="skill-percentage">
+                  <i [class]="skill.icon"></i>
+                  <img *ngIf="skill.icon.includes('.svg')" class="ionic-icon" src="{{ skill.icon }}" alt="{{ skill.name }}">
+                </div>
+                <!-- <span class="skill-percentage">{{ skill.percentage }}%</span> -->
+              </div>
+              
+              <!-- <div class="skill-bar">
+                <div class="skill-progress" [ngStyle]="{'width': skillsVisible ? skill.percentage + '%' : '0%'}"></div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        
+        <h3 class="skills-group-title tools-title">
+          <i class="fas fa-tools"></i> {{ 'database' | translate }} 
+        </h3>
+        
+        <div class="tools-grid">
+          <div *ngFor="let database of portfolioData.databases" class="tool-card">
+            <div class="tool-icon">
+              <!-- <i [class]="database.icon"></i> -->
+              <img class="image-icon" src="{{ database.icon }}" alt="{{ database.name }}">
+            </div>
+            <span class="tool-name">{{ database.name }}</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skills-right">
+        <div class="skills-group">
+          <h3 class="skills-group-title">
+            <i class="fas fa-server"></i>{{ 'backendDev' | translate }}
+          </h3>
+          
+          <div class="skills-bars">
+            <div *ngFor="let skill of portfolioData.backendSkills" class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">{{ skill.name }}</span>
+                <div class="skill-percentage">
+                  <i [class]="skill.icon"></i>
+                  <img *ngIf="skill.icon.includes('.svg')" class="ionic-icon" src="{{ skill.icon }}" alt="{{ skill.name }}">
+                </div>
+                <!-- <span class="skill-percentage">{{ skill.percentage }}%</span> -->
+              </div>
+              
+              <!-- <div class="skill-bar">
+                <div class="skill-progress" [ngStyle]="{'width': skillsVisible ? skill.percentage + '%' : '0%'}"></div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <h3 class="skills-group-title tools-title">
+          <i class="fas fa-tools"></i> {{ 'tools&Techs' | translate }} 
+        </h3>
+        
+        <div class="tools-grid">
+          <div *ngFor="let tool of portfolioData.tools" class="tool-card">
+            <div class="tool-icon" [ngStyle]="{'color': tool.color}">
+              <i [class]="tool.icon"></i>
+            </div>
+            <span class="tool-name">{{ tool.name }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

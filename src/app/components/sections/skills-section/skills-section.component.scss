@@ -1,0 +1,141 @@
+.skills-section {
+  background-color: var(--section-bg-color);
+  padding: 100px 0;
+}
+
+.skills-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.skills-group {
+  margin-bottom: 2.5rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.skills-group-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-color);
+  
+  i {
+    color: var(--primary-color);
+  }
+  
+  &.tools-title {
+    margin-bottom: 2rem;
+  }
+}
+
+.skills-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 30% 0 7%;
+}
+
+.skill-item {
+  width: 100%;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.skill-percentage {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: x-large;
+}
+
+.skill-bar {
+  height: 8px;
+  width: 100%;
+  background-color: var(--card-bg-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 4px;
+  width: 0;
+  transition: width 1.5s ease;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.tool-card {
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.tool-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  
+  i {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
+  }
+}
+
+.tool-name {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+@media (max-width: 992px) {
+  .skills-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.image-icon{
+  width: 27%;
+}
+
+.ionic-icon{
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+}

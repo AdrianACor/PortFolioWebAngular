@@ -1,0 +1,8 @@
+<button 
+  class="theme-toggle" 
+  aria-label="Toggle dark mode" 
+  (click)="toggleTheme()"
+>
+  <i *ngIf="isDarkMode" class="fas fa-sun"></i>
+  <i *ngIf="!isDarkMode" class="fas fa-moon"></i>
+</button>

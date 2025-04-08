@@ -1,0 +1,50 @@
+<section id="home" class="hero-section" *ngIf="portfolioData">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-greeting">{{ 'saludo' | translate}}<span class="text-gradient">{{ portfolioData.name }}</span></h1>
+        <h2 class="hero-title">{{ portfolioData.title }}</h2>
+        <p class="hero-summary">{{ portfolioData.summary }}</p>
+        
+        <div class="hero-buttons">
+          <button class="btn-primary" (click)="scrollToContact()">{{'Contact' | translate}}</button>
+          <a [href]="portfolioData.resumeLink" target="_blank" class="btn-secondary">{{ 'resume' | translate }}</a>
+        </div>
+        
+        <div class="hero-socials">
+          <a [href]="portfolioData.contactInfo.socials.github" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a [href]="portfolioData.contactInfo.socials.linkedin" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <!-- <a [href]="portfolioData.contactInfo.socials.twitter" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a *ngIf="portfolioData.contactInfo.socials.dribbble" 
+             [href]="portfolioData.contactInfo.socials.dribbble" target="_blank" aria-label="Dribbble">
+            <i class="fab fa-dribbble"></i>
+          </a> -->
+        </div>
+      </div>
+      
+      <div class="hero-image">
+        <div class="hero-image-container">
+          <div class="hero-image-bg"></div>
+          <img src="../../../../assets/profile.jpg" alt="{{ portfolioData.fullName }}" class="profile-image">
+        </div>
+      </div>
+    </div>
+    
+    <div class="scroll-indicator" (click)="scrollToSection('about')">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <div class="arrows">
+        <span class="arrow"></span>
+        <span class="arrow"></span>
+        <span class="arrow"></span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+  
+  &:hover {
+    background-color: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary-color);
+  }
+  
+  .toggle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .icon {
+      stroke-width: 2px;
+      transition: transform 0.3s ease;
+    }
+  }
+  
+  &:hover .icon {
+    transform: rotate(12deg);
+  }
+}

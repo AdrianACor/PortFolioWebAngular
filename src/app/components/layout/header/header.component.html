@@ -1,0 +1,73 @@
+<header class="header" *ngIf="portfolioData">
+  <div class="container">
+    <div class="header-content">
+      <a class="logo" routerLink="/">
+        <span class="text-gradient"><{{ portfolioData.fullName }}></span>
+      </a>
+      
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a (click)="scrollToSection('home')">{{ 'Home' | translate}}</a></li>
+          <li><a (click)="scrollToSection('about')">{{ 'About' | translate}}</a></li>
+          <li><a (click)="scrollToSection('projects')">{{ 'Projects' | translate}}</a></li>
+          <li><a (click)="scrollToSection('skills')">{{ 'Skills' | translate}}</a></li>
+          <li><a (click)="scrollToSection('contact')">{{ 'Contact' | translate}}</a></li>
+        </ul>
+        <app-theme-toggle></app-theme-toggle>
+        <a [href]="portfolioData.resumeLink + (selectedLang === 'en'? 'CV_AdrianCordovaENG.pdf': 'CV_AdrianCordova.pdf')" target="_blank" class="resume-btn">{{ 'resume' | translate }}</a>
+        <button class="filter-tag" mat-button [matMenuTriggerFor]="menu">
+          <span 
+            [ngClass]="selectedLang === 'en' ? 'fi fi-us' : 'fi fi-mx'">
+          </span>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="changeLang('es')">{{'language.esp' | translate}}
+            <span class='flag fi fi-mx'>
+          </span>
+          </button>
+          <button mat-menu-item (click)="changeLang('en')">{{'language.eng' | translate}}
+            <span class='flag fi fi-us'>
+            </span>
+          </button>
+        </mat-menu>
+        <!-- <mat-form-field appearance="fill">
+          <mat-select [(value)]="selectedLang" (selectionChange)="changeLang(selectedLang)">
+          <mat-select-trigger>
+            <span *ngIf="selectedLang == 'es'" class="fi fi-mx" style="margin-right: 8px;"><div>Español</div></span>
+            <span *ngIf="selectedLang == 'en'" class="fi fi-us" style="margin-right: 8px;"><div>English</div></span>
+          </mat-select-trigger>
+            <mat-option *ngFor="let lang of langIcons" [value]="lang.code">
+              {{ lang.name }} <span class="{{ lang.icon }}" style="margin-right: 8px;"></span>
+            </mat-option>
+          </mat-select>
+        </mat-form-field> -->
+        
+        <!-- <select #langSelect (change)="changeLang(langSelect.value)">
+          <option *ngFor="let lang of langIcons" [value]="lang.code">
+            {{ lang.name }} <span class='fi fi-mx'></span>
+          </option>
+        </select> -->
+      </nav>
+      <div class="mobile-nav-toggle" (click)="toggleMenu()">
+        <div class="hamburger" [ngClass]="{'active': isMenuOpen}">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="mobile-nav" [ngClass]="{'active': isMenuOpen}">
+    <div class="mobile-nav-container">
+      <ul class="mobile-nav-links">
+        <li><a (click)="scrollToSection('home')">{{ 'Home' | translate}}</a></li>
+        <li><a (click)="scrollToSection('about')">{{ 'About' | translate}}</a></li>
+        <li><a (click)="scrollToSection('projects')">{{ 'Projects' | translate}}</a></li>
+        <li><a (click)="scrollToSection('skills')">{{ 'Skills' | translate}}</a></li>
+        <li><a (click)="scrollToSection('contact')">{{ 'Contact' | translate}}</a></li>
+        <li><a [href]="portfolioData.resumeLink" target="_blank">{{ 'resume' | translate }}</a></li>
+      </ul>
+      <div class="mobile-theme-toggle">
+        <app-theme-toggle></app-theme-toggle>
+      </div>
+    </div>
+  </div>
+</header>

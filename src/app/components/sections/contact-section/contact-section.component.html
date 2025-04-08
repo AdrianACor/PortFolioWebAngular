@@ -1,0 +1,142 @@
+<section id="contact" class="contact-section section" *ngIf="portfolioData">
+  <div class="container">
+    <div class="section-title">
+      <h2>{{ 'getintouch' | translate}}</h2>
+      <div class="section-title-underline"></div>
+    </div>
+    
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>{{'contactInfo' | translate}}</h3>
+        <p>{{ 'feelFree' | translate}}</p>
+        
+        <div class="contact-info-items">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-info-text">
+              <h4>{{'email' | translate}}</h4>
+              <a [href]="'mailto:' + portfolioData.contactInfo.email">{{ portfolioData.contactInfo.email }}</a>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-info-text">
+              <h4>{{ 'location' | translate}} </h4>
+              <p>{{ portfolioData.contactInfo.location }}</p>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-share-alt"></i>
+            </div>
+            <div class="contact-info-text">
+              <h4>{{ 'socials' | translate }}</h4>
+              <div class="contact-socials">
+                <a [href]="portfolioData.contactInfo.socials.github" target="_blank" aria-label="GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a [href]="portfolioData.contactInfo.socials.linkedin" target="_blank" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a *ngIf="portfolioData.contactInfo.socials.twitter"
+                  [href]="portfolioData.contactInfo.socials.twitter" target="_blank" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a *ngIf="portfolioData.contactInfo.socials.dribbble" 
+                   [href]="portfolioData.contactInfo.socials.dribbble" target="_blank" aria-label="Dribbble">
+                  <i class="fab fa-dribbble"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form-container">
+        <h3>{{ 'sendMe' | translate}}</h3>
+        
+        <div *ngIf="submitSuccess" class="form-success-message">
+          <i class="fas fa-check-circle"></i>
+          <p>Your message has been sent successfully!</p>
+        </div>
+        
+        <div *ngIf="submitError" class="form-error-message">
+          <i class="fas fa-exclamation-circle"></i>
+          <p>{{ submitError }}</p>
+        </div>
+        
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+          <div class="form-group">
+            <label for="name">{{ 'yourName' | translate}}</label>
+            <input 
+              type="text" 
+              id="name" 
+              formControlName="name" 
+              placeholder="John Doe"
+              [ngClass]="{'error': contactForm.get('name')?.invalid && contactForm.get('name')?.touched}"
+            >
+            <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="error-message">
+              <p *ngIf="contactForm.get('name')?.errors?.['required']">{{ 'nameRequired' | translate}}</p>
+              <p *ngIf="contactForm.get('name')?.errors?.['minlength']">{{ 'nameSize' | translate}}</p>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">{{ 'yourEmail' | translate}}</label>
+            <input 
+              type="email" 
+              id="email" 
+              formControlName="email" 
+              placeholder="john@example.com"
+              [ngClass]="{'error': contactForm.get('email')?.invalid && contactForm.get('email')?.touched}"
+            >
+            <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="error-message">
+              <p *ngIf="contactForm.get('email')?.errors?.['required']">{{' emailRequiered' | translate}}</p>
+              <p *ngIf="contactForm.get('email')?.errors?.['email']">{{ 'validEmail' | translate}}</p>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">{{ 'subject' | translate}}</label>
+            <input 
+              type="text" 
+              id="subject" 
+              formControlName="subject" 
+              placeholder="{{'subjectPLaceHolder'| translate}}"
+              [ngClass]="{'error': contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched}"
+            >
+            <div *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched" class="error-message">
+              <p *ngIf="contactForm.get('subject')?.errors?.['required']">{{ 'subjectRequired' | translate }}</p>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">{{'message' | translate}}</label>
+            <textarea 
+              id="message" 
+              formControlName="message" 
+              rows="6" 
+              placeholder="{{ 'messagePlaceHolder' | translate}}"
+              [ngClass]="{'error': contactForm.get('message')?.invalid && contactForm.get('message')?.touched}"
+            ></textarea>
+            <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="error-message">
+              <p *ngIf="contactForm.get('message')?.errors?.['required']">{{'messageRequired' |translate }}</p>
+              <p *ngIf="contactForm.get('message')?.errors?.['minlength']">{{ 'messageSize' | translate }}</p>
+            </div>
+          </div>
+          
+          <button type="submit" class="submit-btn" [disabled]="isSubmitting">
+            <span *ngIf="!isSubmitting">{{'sendMessage' | translate}} </span>
+            <span *ngIf="isSubmitting" class="loading-spinner"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

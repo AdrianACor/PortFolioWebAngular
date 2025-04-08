@@ -1,0 +1,52 @@
+<section id="projects" class="projects-section section" *ngIf="portfolioData">
+  <div class="container">
+    <div class="section-title">
+      <h2>{{'myprojects' | translate}}</h2>
+      <div class="section-title-underline"></div>
+    </div>
+    
+    <div class="project-filters">
+      <div class="filter-tags">
+        <button 
+          *ngFor="let tag of tags" 
+          [class.active]="currentTag === tag"
+          (click)="filterProjects(tag)" 
+          class="filter-tag">
+          {{ tag }}
+        </button>
+      </div>
+    </div>
+    
+    <div class="projects-grid">
+      <div *ngFor="let project of filteredProjects" class="project-card">
+        <div class="project-card-inner">
+          <div class="project-image">
+            <img [src]="project.image" [alt]="project.title">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a *ngIf="project.demo" [href]="project.demo" target="_blank" class="project-link demo">
+                  <i class="fas fa-external-link-alt"></i> Demo
+                </a>
+                <a *ngIf="project.github"[href]="project.github" target="_blank" class="project-link github">
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+            <div *ngIf="project.featured" class="featured-badge">
+              <i class="fas fa-star"></i> Featured
+            </div>
+          </div>
+          
+          <div class="project-content">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            
+            <div class="project-tags">
+              <span *ngFor="let tag of project.tags" class="project-tag">{{ tag }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

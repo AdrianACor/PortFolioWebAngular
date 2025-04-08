@@ -1,0 +1,28 @@
+<div class="home-container">
+  <!-- Loading State -->
+  <div *ngIf="loading" class="loading-container">
+    <div class="loader"></div>
+    <p>Loading portfolio data...</p>
+  </div>
+  
+  <!-- Error State -->
+  <div *ngIf="error" class="error-container">
+    <div class="error-icon">
+      <i class="fas fa-exclamation-circle"></i>
+    </div>
+    <h2>Oops! Something went wrong</h2>
+    <p>{{ error }}</p>
+    <button (click)="fetchPortfolioData()" class="retry-btn">
+      <i class="fas fa-redo"></i> Try Again
+    </button>
+  </div>
+  
+  <!-- Portfolio Content -->
+  <ng-container *ngIf="!loading && !error && portfolioData">
+    <app-hero-section [portfolioData]="portfolioData"></app-hero-section>
+    <app-about-section [portfolioData]="portfolioData"></app-about-section>
+    <app-projects-section [portfolioData]="portfolioData"></app-projects-section>
+    <app-skills-section [portfolioData]="portfolioData"></app-skills-section>
+    <app-contact-section [portfolioData]="portfolioData"></app-contact-section>
+  </ng-container>
+</div>

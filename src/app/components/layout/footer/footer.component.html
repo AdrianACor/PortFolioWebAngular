@@ -1,0 +1,60 @@
+<footer class="footer" *ngIf="portfolioData">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <h3 class="text-gradient">{{ portfolioData.name }}</h3>
+          <p>{{ portfolioData.title }}</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-links-group">
+            <h4>Links</h4>
+            <ul>
+              <li><a (click)="scrollToTop()">Home</a></li>
+              <li><a (click)="scrollToSection('about')">About</a></li>
+              <li><a (click)="scrollToSection('projects')">Projects</a></li>
+              <li><a (click)="scrollToSection('skills')">Skills</a></li>
+              <li><a (click)="scrollToSection('contact')">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-links-group">
+            <h4>Contact</h4>
+            <ul>
+              <li><a [href]="'mailto:' + portfolioData.contactInfo.email">{{ portfolioData.contactInfo.email }}</a></li>
+              <li>{{ portfolioData.contactInfo.location }}</li>
+            </ul>
+          </div>
+          
+          <div class="footer-links-group">
+            <h4>Social</h4>
+            <div class="social-links">
+              <a [href]="portfolioData.contactInfo.socials.github" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+              <a [href]="portfolioData.contactInfo.socials.linkedin" target="_blank">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a *ngIf="portfolioData.contactInfo.socials.twitter" 
+                  [href]="portfolioData.contactInfo.socials.twitter" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a *ngIf="portfolioData.contactInfo.socials.dribbble" 
+                 [href]="portfolioData.contactInfo.socials.dribbble" target="_blank">
+                <i class="fab fa-dribbble"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; {{ currentYear }} {{ portfolioData.fullName }}. All rights reserved.</p>
+        <button class="back-to-top" (click)="scrollToTop()">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>
