@@ -1,0 +1,75 @@
+{
+  "saludo": "Hello, I'm ",
+  "language":{"esp":"Spanish","eng":"English"},
+  "Home": "Home",
+  "About": "About",
+  "Projects": "Projects",
+  "Skills": "Skills",
+  "Contact": "Contact",
+  "title": "Developer",
+  "resume": "Resume",
+  "aboutMe":"About Me",
+  "personalJourney": "Personal Journey",
+  "professionalBkgnd": "Professional Background",
+  "experienceTitle": "Experience",
+  "educationTitle": "Education",
+  "myprojects": "Projects",
+  "mySkills" :"Habilities",
+  "getintouch":"Get In Touch",
+  "summary":"Building digital experiences with code and creativity.",
+  "bio":"I'm a software developer that adapts to the needs of the project, for this reason i'm not specialized in a specific language, although i have more experience in Java and i have OCJP6 certification, also i have projects in other languages.",
+  "frontendDev": "FrontEnd",
+  "backendDev": "BackEnd",
+  "tools&Techs": "Tools & technologies",
+  "database" :"Database",
+  "contactInfo": "Contact Information",
+  "feelFree":"Feel free to reach out to me! I'm open to discussing new projects, creative ideas or opportunities.",
+  "email":"Email",
+  "location": "Location",
+  "socials": "Socials",
+  "sendMe": "Send Me a Message",
+  "yourName": "Name",
+  "yourEmail":"EMail",
+  "subject":"Subject",
+  "message":"Message",
+  "sendMessage":"Send Message",
+  "nameRequired": "The name is required",
+  "nameSize":"The name must be at least 2 characters ",
+  "emailRequired": "EMail is required",
+  "validEmail": "Please enter a valid email",
+  "subjectRequired":"The subject is required",
+  "messagePlaceHolder":"Hello, I wold like to discuss..." ,
+  "subjectPLaceHolder": "Project Inquiry",
+  "projects": {
+    "titleGym":"Basic Gym Management",
+    "descriptionGym":"This project focuses on managing all the basic functions of a gym, such as member registration, member check-ins and check-outs, membership payments, etc."
+    ,
+      "titleCar":"CarRegister v2.0",
+      "descriptionCar":"I created this project during my time in engineering. It was originally made in Delphi (Object Pascal), and I updated it by completely redeveloping it in Java with Forms and MySQL as the database."
+      ,
+       "titleToDo":"To Do List",
+        "descriptionToDo":"This is a simple web application I created to train my knowledge in Angular and Java Spring Boot. It's a basic to-do list where I implement the interaction between a CRUD (Create, Read, Update, Delete) and a MySQL database."
+        },
+  "education": {
+    "degreeEngineer":"Computer Systems Engineering with a specialization in Robotics."
+      ,
+      "degreeManagment":"Computer equipment maintenance and digital control."
+      ,
+        "degreeCertificate":"High School Diploma."
+      },
+  "experience":{
+    "positionDeveloper":"Developer",
+    "period2024":"October 2024 - To Date"
+  ,
+  
+    "positionEcommerce":"E-Commerce Developer",
+    "period2020":"January 2020 - June 2024"
+  ,
+    "positionTechnician":"Technician Consultant",
+    "period219":"April 2019 - December 2020"
+  ,
+    "positionSupport":"Support Engineer",
+    "period2012":"December 2012 - April 2019"
+  }
+  
+}
