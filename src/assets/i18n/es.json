@@ -40,6 +40,7 @@
   "subjectRequired":"El asunto es requerido",
   "messagePlaceHolder":"Hola me gustaria discutir..." ,
   "subjectPLaceHolder": "Consulta sobre el proyecto",
+  "resumeLink":"./assets/CV_AdrianCordova.pdf",
   "projects": {
     "titleGym":"Administración basica de gimnasio",
     "descriptionGym":"Este proyecto se enfoca en administrar todas las funciones basicas de un gimnasio como lo es el registro de miembros, entradas y salidas de miembros, pagos de membresia, etc."

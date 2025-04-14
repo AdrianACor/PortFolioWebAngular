@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Injectable } from "@angular/core";
 import { PortfolioService } from "../../../services/portfolio.service";
 import { PortfolioData } from "../../../models/portfolio.model";
 import { TranslateService } from "@ngx-translate/core";
@@ -9,6 +9,11 @@ import {MatSelectModule} from '@angular/material/select';
 import { CommonModule } from "@angular/common";
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule} from '@angular/material/button';
+import { BehaviorSubject } from "rxjs";
+
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: "app-header",
@@ -22,6 +27,9 @@ export class HeaderComponent implements OnInit {
   langs: string[] = [];
   langIcons: Array<{code: string, name: string, icon: string}> = [];
   selectedLang: string = "";
+
+  private currentLanguage = new BehaviorSubject<string>(this.translate.getDefaultLang());
+  currLang$ = this.currentLanguage.asObservable();
 
   iconMap:{[key:string]: string} = {
     'es':'fi fi-mx',
@@ -53,11 +61,11 @@ export class HeaderComponent implements OnInit {
 
   changeLang(lang: string){
     this.selectedLang = lang;
-    // this.translate.use(lang);
+    this.currentLanguage.next(lang);
     this.translate.use(lang).subscribe(()=>{
         this.portfolioService.translateData();
       });
-    // console.log('lang: ',lang)
+    
   }
 
   getIcon(value:string): string{

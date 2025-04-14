@@ -152,6 +152,7 @@ export class PortfolioService {
       'title',
       'summary',
       'bio',
+      'resumeLink',
       'projects.titleGym',
       'projects.descriptionGym',
       'projects.titleCar',
@@ -176,6 +177,7 @@ export class PortfolioService {
       this.portfolioData.title = translations['title'];
       this.portfolioData.summary = translations['summary'];
       this.portfolioData.bio = translations['bio'];
+      this.portfolioData.resumeLink = translations['resumeLink'];
 
       this.portfolioData.projects[0].title = translations['projects.titleGym'];
       this.portfolioData.projects[0].description = translations['projects.descriptionGym'];
@@ -196,7 +198,6 @@ export class PortfolioService {
       this.portfolioData.experience[2].period = translations['experience.period219'];
       this.portfolioData.experience[3].position = translations['experience.positionSupport'];
       this.portfolioData.experience[3].period = translations['experience.period2012'];
-      console.log('translations: ',translations);
     });
   }
 
@@ -205,18 +206,16 @@ export class PortfolioService {
     // return this.http.get<PortfolioData>(`${this.baseUrl}/portfolio`).pipe(
     //   catchError(this.handleError<PortfolioData>('getPortfolioData'))
     // );
-    // console.log('portfolio: ',this.portfolioData);
-    // For now, return the mock data
-    // this.translate.use("en").subscribe(()=>{
-    //   this.translateData();
-    // });
-    // console.log('translate: ',this.translate);
-    // console.log('portfolioTranslate: ',this.portfolioData);
+    this.translate.use("en").subscribe(()=>{
+      this.translateData();
+    });
     return of(this.portfolioData);
   }
 
   submitContactForm(formData: ContactFormData): Observable<any> {
-    return this.http.post(`${this.baseUrl}/contact`, formData).pipe(
+    let formDataJSON = JSON.parse(JSON.stringify(formData));
+    // console.log('formData: ',formDataJSON);
+    return this.http.post("https://enviocorreobknd.vercel.app/api/envio", formData,{responseType: 'text'}).pipe(
       catchError((error) => {
         console.error("Error submitting contact form:", error);
         return throwError(

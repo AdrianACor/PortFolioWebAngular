@@ -102,7 +102,7 @@
             </div>
           </div>
           
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="subject">{{ 'subject' | translate}}</label>
             <input 
               type="text" 
@@ -114,7 +114,7 @@
             <div *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched" class="error-message">
               <p *ngIf="contactForm.get('subject')?.errors?.['required']">{{ 'subjectRequired' | translate }}</p>
             </div>
-          </div>
+          </div> -->
           
           <div class="form-group">
             <label for="message">{{'message' | translate}}</label>
@@ -140,3 +140,4 @@
     </div>
   </div>
 </section>
+

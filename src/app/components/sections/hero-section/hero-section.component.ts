@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { PortfolioService } from "../../../services/portfolio.service";
 import { PortfolioData } from "../../../models/portfolio.model";
-import { TranslateModule } from '@ngx-translate/core';
-import { CommonModule } from '@angular/common';  
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
+import { HeaderComponent } from "../../layout/header/header.component";
 
 @Component({
   selector: "app-hero-section",
@@ -13,13 +14,18 @@ import { CommonModule } from '@angular/common';
 export class HeroSectionComponent implements OnInit {
   @Input() portfolioData!: PortfolioData;
   isMenuOpen = false;
+  selectedLang: string = "";
 
-  constructor(private portfolioService: PortfolioService) {}
+  constructor(private portfolioService: PortfolioService, private translate: TranslateService, private header: HeaderComponent) {}
 
   ngOnInit(): void {
     this.portfolioService.getPortfolioData().subscribe((data) => {
       this.portfolioData = data;
     });
+
+    this.header.currLang$.subscribe((lang) =>{
+      this.selectedLang = lang;
+    })
   }
 
   scrollToContact(): void {

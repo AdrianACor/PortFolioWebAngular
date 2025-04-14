@@ -5,6 +5,7 @@ import { PortfolioData, ContactFormData } from '../../../models/portfolio.model'
 import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-contact-section',
@@ -22,12 +23,13 @@ export class ContactSectionComponent implements OnInit {
   
   constructor(
     private fb: FormBuilder,
-    private portfolioService: PortfolioService
+    private portfolioService: PortfolioService,
+    private dialog: MatDialog
   ) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
-      subject: ['', Validators.required],
+      // subject: ['', Validators.required],
       message: ['', [Validators.required, Validators.minLength(10)]]
     });
   }
@@ -44,13 +46,13 @@ export class ContactSectionComponent implements OnInit {
       });
       return;
     }
-    
-    this.isSubmitting = true;
-    this.submitSuccess = false;
-    this.submitError = null;
+    // this.isSubmitting = true;
+    // this.submitSuccess = false;
+    // this.submitError = null;
     
     const formData: ContactFormData = this.contactForm.value;
     
+    // console.log('formData: ',formData);
     this.portfolioService.submitContactForm(formData).subscribe({
       next: () => {
         this.isSubmitting = false;
@@ -77,5 +79,8 @@ export class ContactSectionComponent implements OnInit {
         }, 5000);
       }
     });
+    
+    
   }
+  
 }
