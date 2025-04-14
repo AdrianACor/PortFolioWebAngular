@@ -14,7 +14,7 @@
   "experienceTitle": "Experience",
   "educationTitle": "Education",
   "myprojects": "Projects",
-  "mySkills" :"Habilities",
+  "mySkills" :"My Skills",
   "getintouch":"Get In Touch",
   "summary":"Building digital experiences with code and creativity.",
   "bio":"I'm a software developer that adapts to the needs of the project, for this reason i'm not specialized in a specific language, although i have more experience in Java and i have OCJP6 certification, also i have projects in other languages.",
@@ -40,6 +40,7 @@
   "subjectRequired":"The subject is required",
   "messagePlaceHolder":"Hello, I wold like to discuss..." ,
   "subjectPLaceHolder": "Project Inquiry",
+  "resumeLink":"./assets/CV_AdrianCordovaENG.pdf",
   "projects": {
     "titleGym":"Basic Gym Management",
     "descriptionGym":"This project focuses on managing all the basic functions of a gym, such as member registration, member check-ins and check-outs, membership payments, etc."
