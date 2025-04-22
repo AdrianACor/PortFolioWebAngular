@@ -35,9 +35,14 @@
   h3 {
     font-size: 1.75rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
     color: var(--text-color);
+    margin: unset;
+    background-color: var(--background-color);
+    padding: 25px 0px;
   }
+  background-color: var(--card-bg-color);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   
 }
 
@@ -73,6 +78,7 @@
   
   &.education {
     border-top: 3px solid var(--primary-color);
+    box-shadow: unset;
   }
   
   &.experience {

@@ -7,31 +7,6 @@
     <div class="about-text" [innerHTML]="portfolioData.bio"></div>
     <div class="about-content">
       <div class="about-left">
-        <h3>{{ 'personalJourney' | translate}}</h3>
-        <!-- <div class="about-text" [innerHTML]="portfolioData.bio"></div> -->
-        <div class="about-cards">
-          <div class="about-card education">
-            <div class="card-header">
-              <h4>{{ 'educationTitle' | translate }}</h4>
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <ul class="timeline">
-              <li *ngFor="let edu of portfolioData.education" class="timeline-item">
-                <div class="timeline-icon">
-                  <i [class]="edu.icon"></i>
-                </div>
-                <div class="timeline-content">
-                  <h5>{{ edu.degree }}</h5>
-                  <p>{{ edu.institution }}</p>
-                  <span class="timeline-date">{{ edu.year }}</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    
-      <div class="about-left">
         <h3>{{ 'professionalBkgnd' | translate }}</h3>
         <div class="about-cards">
           <div class="about-card experience">
@@ -49,6 +24,32 @@
                   <h5>{{ exp.position }}</h5>
                   <p>{{ exp.company }}</p>
                   <span class="timeline-date">{{ exp.period }}</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    
+      <div class="about-left">
+        <h3>{{ 'personalJourney' | translate}}</h3>
+        <!-- <div class="about-text" [innerHTML]="portfolioData.bio"></div> -->
+        <div class="about-cards">
+          <div class="about-card education">
+            <div class="card-header">
+              <h4>{{ 'educationTitle' | translate }}</h4>
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <ul class="timeline">
+              <li *ngFor="let edu of portfolioData.education" class="timeline-item">
+                <div class="timeline-icon">
+                  <i [class]="edu.icon"></i>
+                </div>
+                <div class="timeline-content">
+                  <h5>{{ edu.degree }}</h5>
+                  <p>{{ edu.institution }}</p>
+                  <span class="timeline-date">{{ edu.year }}</span>
                 </div>
               </li>
             </ul>

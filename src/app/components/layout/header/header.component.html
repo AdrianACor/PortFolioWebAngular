@@ -50,6 +50,7 @@
       </nav>
       <div class="mobile-nav-toggle" (click)="toggleMenu()">
         <div class="hamburger" [ngClass]="{'active': isMenuOpen}">
+          <i class="fa-solid fa-bars"></i>
         </div>
       </div>
     </div>
@@ -67,6 +68,11 @@
       </ul>
       <div class="mobile-theme-toggle">
         <app-theme-toggle></app-theme-toggle>
+        <button class="filter-tag" mat-button [matMenuTriggerFor]="menu">
+          <span 
+            [ngClass]="selectedLang === 'en' ? 'fi fi-us' : 'fi fi-mx'">
+          </span>
+        </button>
       </div>
     </div>
   </div>

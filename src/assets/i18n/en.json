@@ -41,6 +41,7 @@
   "messagePlaceHolder":"Hello, I wold like to discuss..." ,
   "subjectPLaceHolder": "Project Inquiry",
   "resumeLink":"./assets/CV_AdrianCordovaENG.pdf",
+  "code": "Code",
   "projects": {
     "titleGym":"Basic Gym Management",
     "descriptionGym":"This project focuses on managing all the basic functions of a gym, such as member registration, member check-ins and check-outs, membership payments, etc."
