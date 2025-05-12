@@ -91,14 +91,14 @@
             <label for="email">{{ 'yourEmail' | translate}}</label>
             <input 
               type="email" 
-              id="email" 
-              formControlName="email" 
+              id="emailFrom" 
+              formControlName="emailFrom" 
               placeholder="john@example.com"
               [ngClass]="{'error': contactForm.get('email')?.invalid && contactForm.get('email')?.touched}"
             >
-            <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="error-message">
-              <p *ngIf="contactForm.get('email')?.errors?.['required']">{{' emailRequiered' | translate}}</p>
-              <p *ngIf="contactForm.get('email')?.errors?.['email']">{{ 'validEmail' | translate}}</p>
+            <div *ngIf="contactForm.get('emailFrom')?.invalid && contactForm.get('emailFrom')?.touched" class="error-message">
+              <p *ngIf="contactForm.get('emailFrom')?.errors?.['required']">{{' emailRequiered' | translate}}</p>
+              <p *ngIf="contactForm.get('emailFrom')?.errors?.['emailFrom']">{{ 'validEmail' | translate}}</p>
             </div>
           </div>
           
