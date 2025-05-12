@@ -53,7 +53,7 @@ export interface ContactInfo {
 
 export interface ContactFormData {
   name: string;
-  email: string;
+  emailFrom: string;
   subject: string;
   message: string;
 }
