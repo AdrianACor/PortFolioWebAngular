@@ -14,7 +14,7 @@
           <li><a (click)="scrollToSection('contact')">{{ 'Contact' | translate}}</a></li>
         </ul>
         <app-theme-toggle></app-theme-toggle>
-        <a [href]="portfolioData.resumeLink + (selectedLang === 'en'? 'CV_AdrianCordovaENG.pdf': 'CV_AdrianCordova.pdf')" target="_blank" class="resume-btn">{{ 'resume' | translate }}</a>
+        <a [href]="portfolioData.resumeLink" target="_blank" class="resume-btn">{{ 'resume' | translate }}</a>
         <button class="filter-tag" mat-button [matMenuTriggerFor]="menu">
           <span 
             [ngClass]="selectedLang === 'en' ? 'fi fi-us' : 'fi fi-mx'">
