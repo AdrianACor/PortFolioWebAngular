@@ -46,11 +46,14 @@
     "titleGym":"Basic Gym Management",
     "descriptionGym":"This project focuses on managing all the basic functions of a gym, such as member registration, member check-ins and check-outs, membership payments, etc."
     ,
-      "titleCar":"CarRegister v2.0",
-      "descriptionCar":"I created this project during my time in engineering. It was originally made in Delphi (Object Pascal), and I updated it by completely redeveloping it in Java with Forms and MySQL as the database."
-      ,
-       "titleToDo":"To Do List",
-        "descriptionToDo":"This is a simple web application I created to train my knowledge in Angular and Java Spring Boot. It's a basic to-do list where I implement the interaction between a CRUD (Create, Read, Update, Delete) and a MySQL database."
+    "titleCar":"CarRegister v2.0",
+    "descriptionCar":"I created this project during my time in engineering. It was originally made in Delphi (Object Pascal), and I updated it by completely redeveloping it in Java with Forms and MySQL as the database."
+    ,
+    "titleToDo":"To Do List",
+    "descriptionToDo":"This is a simple web application I created to train my knowledge in Angular and Java Spring Boot. It's a basic to-do list where I implement the interaction between a CRUD (Create, Read, Update, Delete) and a MySQL database."
+    ,
+    "titleCRUD":"CRUD Angular/.NET",
+    "descriptionCRUD":"This is a proyect that I realized in the Udemy platform, this project consist in an Angular app with data from .NET API, I used Tailwind as CSS style."
         },
   "education": {
     "degreeEngineer":"Computer Systems Engineering with a specialization in Robotics."
