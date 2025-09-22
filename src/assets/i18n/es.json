@@ -48,7 +48,9 @@
     "titleCar": "CarRegister v2.0",
     "descriptionCar": "Este proyecto lo realicé durante mi estancia en la ingeniería. Fue desarrollado inicialmente en Delphi (Object Pascal) y luego lo actualicé, realizándolo completamente en Java con Forms y MySQL como base de datos.",
     "titleToDo": "To Do List",
-    "descriptionToDo": "Esta es una simple aplicación web que realicé para entrenar mis conocimientos en Angular y Java Spring Boot. Es una lista básica de tareas donde implemento la interacción entre un CRUD (Create, Read, Update, Delete) y una base de datos MySQL."
+    "descriptionToDo": "Esta es una simple aplicación web que realicé para entrenar mis conocimientos en Angular y Java Spring Boot. Es una lista básica de tareas donde implemento la interacción entre un CRUD (Create, Read, Update, Delete) y una base de datos MySQL.",
+    "titleCRUD":"CRUD Angular/.NET",
+    "descriptionCRUD":"Es un proyecto que realice en la plataforma de Udemy, este proyecto consiste en una aplicacion Angular con estilos de Tailwind CSS y que obtiene datos de una API ralizada en .NET y SQL Server como base datos."
   },
   "education": {
     "degreeEngineer": "Ingeniería en Sistemas Computacionales con especialidad en robótica.",

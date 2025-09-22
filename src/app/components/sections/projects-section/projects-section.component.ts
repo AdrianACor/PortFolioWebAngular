@@ -2,7 +2,10 @@ import { Component, OnInit, Input } from "@angular/core";
 import { PortfolioService } from "../../../services/portfolio.service";
 import { PortfolioData, Project } from "../../../models/portfolio.model";
 import { TranslateModule } from '@ngx-translate/core';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
+import { Gallery, ImageItem } from 'ng-gallery';
+import { Lightbox } from "ng-gallery/lightbox";
+
 
 @Component({
   selector: "app-projects-section",
@@ -15,8 +18,11 @@ export class ProjectsSectionComponent implements OnInit {
   filteredProjects: Project[] = [];
   currentTag: string = "All";
   tags: string[] = ["All"];
+  
 
-  constructor(private portfolioService: PortfolioService) {}
+  constructor(private portfolioService: PortfolioService,
+    private gallery: Gallery, private lightbox: Lightbox
+  ) {}
 
   ngOnInit(): void {
     this.portfolioService.getPortfolioData().subscribe((data) => {
@@ -30,7 +36,10 @@ export class ProjectsSectionComponent implements OnInit {
       });
 
       this.tags = ["All", ...Array.from(uniqueTags)];
+
+
     });
+
   }
 
   filterProjects(tag: string): void {
@@ -44,4 +53,20 @@ export class ProjectsSectionComponent implements OnInit {
       );
     }
   }
+
+  openGallery(index: number) {
+    
+    const galleryRef = this.gallery.ref('default');
+    galleryRef.load([
+      new ImageItem({
+      src: this.filteredProjects[index].image,
+      thumb: this.filteredProjects[index].image
+    })
+    ])
+
+    this.lightbox.open(0,'default');
+
+  }
+
+
 }

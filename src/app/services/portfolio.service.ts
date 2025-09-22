@@ -49,6 +49,17 @@ export class PortfolioService {
         github: "https://github.com/AdrianACor/TodoList",
         featured: false,
       },
+      {
+        id: 4,
+        title: "CRUD Angular/.NET",
+        description:
+          "This is a proyect that I realized in the Udemy platform, this project consist in an Angular app with Tailwind CSS for the style, data from .NET API and a SQL Server database.",
+        image: "./assets/CRUD_Angular-.NET.jpg",
+        tags: ["Angular", "Tailwind CSS", "API Integration", ".NET Framewrok", "SQL Server"],
+        demo: "",
+        github: "https://github.com/AdrianACor/EmployeeManagement",
+        featured: false,
+      },
     ],
     frontendSkills: [
       { name: "HTML", percentage: 95, icon: "fab fa-html5" },
@@ -159,6 +170,7 @@ export class PortfolioService {
       'projects.descriptionCar',
       'projects.titleToDo',
       'projects.descriptionToDo',
+      'projects.descriptionCRUD',
       'education.degreeEngineer',
       'education.degreeManagment',
       'education.degreeCertificate',
@@ -185,6 +197,7 @@ export class PortfolioService {
       this.portfolioData.projects[1].description = translations['projects.descriptionCar'];
       this.portfolioData.projects[2].title = translations['projects.titleToDo'];
       this.portfolioData.projects[2].description = translations['projects.descriptionToDo'];
+      this.portfolioData.projects[3].description = translations['projects.descriptionCRUD'];
 
       this.portfolioData.education[0].degree = translations['education.degreeEngineer'];
       this.portfolioData.education[1].degree = translations['education.degreeManagment'];

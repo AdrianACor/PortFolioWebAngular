@@ -18,9 +18,9 @@
     </div>
     
     <div class="projects-grid">
-      <div *ngFor="let project of filteredProjects" class="project-card">
+      <div *ngFor="let project of filteredProjects; let i = index" class="project-card">
         <div class="project-card-inner">
-          <div class="project-image">
+          <div class="project-image" (click)="openGallery(i)">
             <img [src]="project.image" [alt]="project.title">
             <div class="project-overlay">
               <div class="project-links">
@@ -49,4 +49,5 @@
       </div>
     </div>
   </div>
+  <!-- <gallery></gallery> -->
 </section>

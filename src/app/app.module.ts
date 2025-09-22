@@ -23,6 +23,7 @@ import { ContactSectionComponent } from "./components/sections/contact-section/c
 import { HomeComponent } from "./pages/home/home.component";
 import { NotFoundComponent } from "./pages/not-found/not-found.component";
 
+
 @NgModule({
   declarations: [
     AppComponent,
