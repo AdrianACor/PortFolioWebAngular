@@ -63,8 +63,11 @@
         "degreeCertificate":"High School Diploma."
       },
   "experience":{
-    "positionDeveloper":"Developer",
-    "period2024":"October 2024 - To Date"
+    "positionFSDeveloper":"Full Stack Developer",
+    "period2025":"October 2025 - June 2026",
+
+    "positionDeveloper":"Full Stack Developer",
+    "period2024":"November 2024 - September 2025"
   ,
   
     "positionEcommerce":"E-Commerce Developer",

@@ -58,8 +58,10 @@
     "degreeCertificate": "Certificado de secundaria."
   },
   "experience": {
-    "positionDeveloper": "Desarrollador",
-    "period2024": "Octubre 2024 - A la fecha",
+     "positionFSDeveloper":"Desarrollador Full Stack",
+    "period2025":"Octubre 2025 - Junio 2026",
+    "positionDeveloper": "Desarrollador Full Stack",
+    "period2024": "Noviembre 2024 - Septiembre 202",
     "positionEcommerce": "Desarrollador E-Commerce",
     "period2020": "Enero 2020 - Junio 2024",
     "positionTechnician": "Consultor técnico",
