@@ -117,7 +117,13 @@ export class PortfolioService {
     ],
     experience: [
       {
-        position: "Developer",
+        position: "Full Stack Developer",
+        company: "Grupo Arga",
+        period: "October 2025 - June 2026",
+        icon: "fas fa-briefcase",
+      },
+      {
+        position: "Full stack Developer",
         company: "PCD IT Solutions & Consulting",
         period: "October 2024 - Present",
         icon: "fas fa-briefcase",
@@ -174,6 +180,8 @@ export class PortfolioService {
       'education.degreeEngineer',
       'education.degreeManagment',
       'education.degreeCertificate',
+      'experience.positionFSDeveloper',
+      'experience.period2025',
       'experience.positionDeveloper',
       'experience.period2024',
       'experience.positionEcommerce',
@@ -203,14 +211,16 @@ export class PortfolioService {
       this.portfolioData.education[1].degree = translations['education.degreeManagment'];
       this.portfolioData.education[2].degree = translations['education.degreeCertificate'];
 
-      this.portfolioData.experience[0].position = translations['experience.positionDeveloper'];
-      this.portfolioData.experience[0].period = translations['experience.period2024'];
-      this.portfolioData.experience[1].position = translations['experience.positionEcommerce'];
-      this.portfolioData.experience[1].period = translations['experience.period2020'];
-      this.portfolioData.experience[2].position = translations['experience.positionTechnician'];
-      this.portfolioData.experience[2].period = translations['experience.period219'];
-      this.portfolioData.experience[3].position = translations['experience.positionSupport'];
-      this.portfolioData.experience[3].period = translations['experience.period2012'];
+      this.portfolioData.experience[0].position = translations['experience.positionFSDeveloper'];
+      this.portfolioData.experience[0].period = translations['experience.period2025'];
+      this.portfolioData.experience[1].position = translations['experience.positionDeveloper'];
+      this.portfolioData.experience[1].period = translations['experience.period2024'];
+      this.portfolioData.experience[2].position = translations['experience.positionEcommerce'];
+      this.portfolioData.experience[2].period = translations['experience.period2020'];
+      this.portfolioData.experience[3].position = translations['experience.positionTechnician'];
+      this.portfolioData.experience[3].period = translations['experience.period219'];
+      this.portfolioData.experience[4].position = translations['experience.positionSupport'];
+      this.portfolioData.experience[4].period = translations['experience.period2012'];
     });
   }
 
